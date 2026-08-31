@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teacher Login · Junior Chapel</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main style="max-width:400px;">
+    <h1 style="color:var(--blue-deep);margin-bottom:4px;">Teacher Login</h1>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:24px;" id="signup-note"></p>
+
+    <form id="login-form" class="card">
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+      <label for="password">Password</label>
+      <div class="password-field">
+        <input type="password" id="password" required />
+        <button type="button" id="toggle-password" aria-label="Show password">👁️</button>
+      </div>
+      <label for="branch">Which branch do you teach at?</label>
+      <select id="branch" required></select>
+      <p class="field-note">Your uploads will automatically be tagged for this branch.</p>
+
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400;">
+        <input type="checkbox" id="remember-me" checked style="width:auto;margin:0;" />
+        Remember me on this device
+      </label>
+
+      <div class="error-text" id="error" style="display:none;"></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="submit-btn">
+        Sign in
+      </button>
+    </form>
+
+    <p style="margin-top:16px;font-size:13px;">
+      <a href="forgot-password.html">Forgot your password?</a>
+    </p>
+    <p style="margin-top:8px;font-size:13px;">
+      <a href="index.html?role=visitor">Not a teacher? Continue as a visitor</a>
+    </p>
+  </main>
+
+  <footer>Christ Treasure Centre · Junior Chapel</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

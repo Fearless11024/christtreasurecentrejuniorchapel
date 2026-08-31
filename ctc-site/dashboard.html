@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teacher Dashboard · Junior Chapel</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:8px;">
+      <div>
+        <h1 style="color:var(--blue-deep);margin-bottom:2px;">Teacher Dashboard</h1>
+        <p style="color:var(--ink-soft);font-size:14px;margin:0;" id="signed-in-as"></p>
+        <p style="color:var(--blue-dark);font-size:14px;margin:4px 0 0;" id="teaching-branch-line"></p>
+      </div>
+      <a class="btn btn-primary" href="upload.html">+ Upload Lesson</a>
+      <a class="btn btn-outline" href="add-event.html">📅 Add Event</a>
+      <a class="btn btn-outline" href="chat.html">💬 Teacher Chat</a>
+    </div>
+
+    <section>
+      <div class="eyebrow">Visitors</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div class="card" style="flex:1;min-width:140px;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:var(--blue-deep);" id="visits-today">-</div>
+          <div style="font-size:12px;color:var(--muted);">Today</div>
+        </div>
+        <div class="card" style="flex:1;min-width:140px;text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:var(--blue-deep);" id="visits-total">-</div>
+          <div style="font-size:12px;color:var(--muted);">All time</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Your Lessons</div>
+      <div id="my-lessons"></div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Branches</div>
+      <div class="pill-row" id="branches-row" style="margin-bottom:14px;"></div>
+      <form id="add-branch-form" class="card" style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;padding:16px;">
+        <div style="margin-bottom:0;">
+          <label style="margin-bottom:4px;">New branch name</label>
+          <input type="text" id="new-branch-name" style="margin-bottom:0;width:150px;" placeholder="e.g. Abuja" />
+        </div>
+        <div style="margin-bottom:0;">
+          <label style="margin-bottom:4px;">Type</label>
+          <select id="new-branch-tag" style="margin-bottom:0;width:130px;">
+            <option value="Branch">Branch</option>
+            <option value="Headquarters">Headquarters</option>
+          </select>
+        </div>
+        <div style="margin-bottom:0;">
+          <label style="margin-bottom:4px;">Location</label>
+          <input type="text" id="new-branch-place" style="margin-bottom:0;width:170px;" placeholder="e.g. Abuja, Nigeria" />
+        </div>
+        <button type="submit" class="btn btn-outline">Add branch</button>
+      </form>
+    </section>
+
+    <section>
+      <div class="eyebrow">Classes</div>
+      <div class="pill-row" id="classes-row" style="margin-bottom:14px;"></div>
+      <form id="add-class-form" class="card" style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;padding:16px;">
+        <div style="margin-bottom:0;">
+          <label style="margin-bottom:4px;">New class name</label>
+          <input type="text" id="new-class-name" style="margin-bottom:0;width:160px;" placeholder="e.g. Toddlers" />
+        </div>
+        <div style="margin-bottom:0;">
+          <label style="margin-bottom:4px;">Age range</label>
+          <input type="text" id="new-class-age" style="margin-bottom:0;width:130px;" placeholder="Ages 0-2" />
+        </div>
+        <button type="submit" class="btn btn-outline">Add class</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>Christ Treasure Centre · Junior Chapel</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
