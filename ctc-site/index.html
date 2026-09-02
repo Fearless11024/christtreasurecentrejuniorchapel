@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Junior Chapel · Christ Treasure Centre</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <section style="text-align:center;">
+      <h1 style="color:var(--blue-deep);margin-bottom:6px;">Welcome to Junior Chapel</h1>
+      <p style="color:var(--blue-dark);max-width:560px;margin:0 auto;">
+        Browse Christ-centered lessons and videos for every class. Teachers can log in to upload new material for their group.
+      </p>
+    </section>
+
+    <div id="birthday-banner" style="display:none;"></div>
+
+    <section id="role-gate" style="display:none;text-align:center;">
+      <div class="card" style="max-width:420px;margin:0 auto;">
+        <p style="margin-top:0;font-weight:600;color:var(--blue-deep);">Are you a visitor or a teacher?</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-outline" id="role-visitor-btn">🙂 I'm a Visitor</button>
+          <button class="btn btn-primary" id="role-teacher-btn">👩‍🏫 I'm a Teacher</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="visitor-content" style="display:none;">
+      <section>
+        <div class="eyebrow">Choose your branch</div>
+        <div class="pill-row" id="branch-row"></div>
+      </section>
+
+      <section id="class-section" style="display:none;">
+        <div class="eyebrow" id="class-eyebrow">Classes</div>
+        <div id="class-picker"></div>
+      </section>
+
+      <section id="lessons-section" style="display:none;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+          <div class="eyebrow" style="margin-bottom:0;">Lessons</div>
+          <a class="btn btn-primary" href="upload.html" id="upload-btn" style="display:none;">+ Upload lesson</a>
+        </div>
+        <div id="lessons-grid" class="card-grid"></div>
+      </section>
+
+      <p style="text-align:center;margin-top:24px;font-size:13px;" id="not-visitor-line"></p>
+    </div>
+  </main>
+
+  <footer>Christ Treasure Centre · Junior Chapel · Built for teaching the little ones</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/visits.js"></script>
+  <script src="js/birthday-banner.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

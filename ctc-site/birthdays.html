@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthdays · Junior Chapel</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+      <h1 style="color:var(--blue-deep);margin:0;">🎂 Birthdays</h1>
+      <a class="btn btn-outline" href="dashboard.html">&larr; Dashboard</a>
+    </div>
+
+    <form id="birthday-form" class="card" style="margin-bottom:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;">
+      <div style="margin-bottom:0;">
+        <label style="margin-bottom:4px;">Child's first name</label>
+        <input type="text" id="bd-name" style="margin-bottom:0;width:160px;" required />
+      </div>
+      <div style="margin-bottom:0;">
+        <label style="margin-bottom:4px;">Month</label>
+        <select id="bd-month" style="margin-bottom:0;width:120px;"></select>
+      </div>
+      <div style="margin-bottom:0;">
+        <label style="margin-bottom:4px;">Day</label>
+        <select id="bd-day" style="margin-bottom:0;width:80px;"></select>
+      </div>
+      <div style="margin-bottom:0;">
+        <label style="margin-bottom:4px;">Class</label>
+        <select id="bd-class" style="margin-bottom:0;width:150px;"></select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+    <div class="eyebrow">All Birthdays</div>
+    <div id="birthday-list"></div>
+  </main>
+
+  <footer>Christ Treasure Centre · Junior Chapel</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/birthdays.js"></script>
+</body>
+</html>

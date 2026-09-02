@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suggest a Lesson · Junior Chapel</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main style="max-width:480px;">
+    <h1 style="color:var(--blue-deep);margin-bottom:4px;">💡 Suggest a Lesson Topic</h1>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:20px;">
+      Have an idea for a lesson or programme? Teachers and parents can drop a suggestion here.
+    </p>
+
+    <form id="suggest-form" class="card">
+      <label for="sg-name">Your name (optional)</label>
+      <input type="text" id="sg-name" />
+
+      <label for="sg-content">Your suggestion *</label>
+      <textarea id="sg-content" rows="4" required></textarea>
+
+      <div class="error-text" id="error" style="display:none;"></div>
+      <div class="status-text" id="status" style="display:none;"></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="submit-btn">
+        Submit
+      </button>
+    </form>
+  </main>
+
+  <footer>Christ Treasure Centre · Junior Chapel</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/suggest.js"></script>
+</body>
+</html>

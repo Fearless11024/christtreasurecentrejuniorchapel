@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certificates · Junior Chapel</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff; }
+      main { max-width: 100%; padding: 0; }
+      #certificate { box-shadow: none !important; border: none !important; }
+    }
+    #certificate {
+      border: 10px solid var(--blue);
+      border-radius: 12px;
+      padding: 48px 32px;
+      text-align: center;
+      background: #fff;
+      font-family: Georgia, serif;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header no-print" id="site-header"></header>
+
+  <main>
+    <div class="no-print" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+      <h1 style="color:var(--blue-deep);margin:0;">🖨️ Certificates</h1>
+      <a class="btn btn-outline" href="dashboard.html">&larr; Dashboard</a>
+    </div>
+
+    <form id="cert-form" class="card no-print" style="margin-bottom:24px;">
+      <label for="cert-name">Child's name *</label>
+      <input type="text" id="cert-name" required />
+
+      <label for="cert-type">Achievement</label>
+      <select id="cert-type">
+        <option value="Scripture Memorization">Scripture Memorization</option>
+        <option value="Perfect Attendance">Perfect Attendance</option>
+        <option value="Completion of Class">Completion of Class</option>
+        <option value="Outstanding Participation">Outstanding Participation</option>
+        <option value="custom">Custom (type below)</option>
+      </select>
+
+      <div id="custom-type-wrap" style="display:none;">
+        <label for="cert-custom">Custom achievement text</label>
+        <input type="text" id="cert-custom" placeholder="e.g. Best Bible Quiz Score" />
+      </div>
+
+      <label for="cert-date">Date</label>
+      <input type="date" id="cert-date" />
+
+      <button type="button" class="btn btn-primary" id="generate-btn" style="width:100%;justify-content:center;">
+        Generate Certificate
+      </button>
+    </form>
+
+    <div id="certificate" style="display:none;max-width:640px;margin:0 auto;">
+      <div style="font-size:13px;letter-spacing:0.2em;color:var(--blue);text-transform:uppercase;">Christ Treasure Centre · Junior Chapel</div>
+      <h1 style="font-size:32px;color:var(--blue-deep);margin:16px 0 4px;">Certificate of Achievement</h1>
+      <p style="font-size:14px;color:var(--ink-soft);margin:0 0 24px;">This certificate is proudly presented to</p>
+      <div id="cert-name-display" style="font-size:30px;color:var(--red);margin-bottom:24px;border-bottom:2px solid var(--blue-soft-border);display:inline-block;padding:0 24px 8px;"></div>
+      <p style="font-size:16px;color:var(--ink);margin-bottom:32px;">for <strong id="cert-type-display"></strong></p>
+      <div style="font-size:13px;color:var(--muted);" id="cert-date-display"></div>
+    </div>
+
+    <button class="btn btn-primary no-print" id="print-btn" style="display:none;margin:24px auto 0;justify-content:center;">
+      🖨️ Print
+    </button>
+  </main>
+
+  <footer class="no-print">Christ Treasure Centre · Junior Chapel</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/certificate.js"></script>
+</body>
+</html>

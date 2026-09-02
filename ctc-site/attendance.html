@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Attendance · Junior Chapel</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+      <h1 style="color:var(--blue-deep);margin:0;">📋 Attendance</h1>
+      <a class="btn btn-outline" href="dashboard.html">&larr; Dashboard</a>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:20px;">
+      <div style="margin-bottom:0;">
+        <label style="margin-bottom:4px;">Class</label>
+        <select id="att-class" style="margin-bottom:0;width:200px;"></select>
+      </div>
+      <div style="margin-bottom:0;">
+        <label style="margin-bottom:4px;">Date</label>
+        <input type="date" id="att-date" style="margin-bottom:0;" />
+      </div>
+    </div>
+
+    <form id="add-child-form" class="card" style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:20px;">
+      <div style="margin-bottom:0;">
+        <label style="margin-bottom:4px;">Add a child to this class's roster</label>
+        <input type="text" id="new-child-name" style="margin-bottom:0;width:200px;" placeholder="Child's name" />
+      </div>
+      <button type="submit" class="btn btn-outline">Add</button>
+    </form>
+
+    <div class="eyebrow">Roster & Attendance for Selected Date</div>
+    <div id="roster-list"></div>
+    <button class="btn btn-primary" id="save-attendance-btn" style="margin-top:16px;">Save Attendance</button>
+
+    <div style="margin-top:36px;">
+      <div class="eyebrow">Recent Attendance (this class)</div>
+      <div id="trend-list"></div>
+    </div>
+  </main>
+
+  <footer>Christ Treasure Centre · Junior Chapel</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/attendance.js"></script>
+</body>
+</html>
